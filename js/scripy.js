@@ -1,40 +1,43 @@
 // -------------------------page1 js
 
-function prodctscadmuv() {
-    let prodtbox = document.querySelectorAll(".prodct-box")
+$(function () {
+    function prodctscadmuv() {
+        let prodtbox = document.querySelectorAll(".prodct-box")
 
-    prodtbox.forEach((e) => {
-        e.addEventListener("mousemove", () => {
-            let viecads = e.children[0].children[2];
-            let imgbig = e.children[0].children[0];
-            let imgzoom = e.children[0].children[1]
-            let butonsvlyu = e.children[1].children[2]
-            viecads.style.bottom = 0 + "px"
-            butonsvlyu.style.bottom = 0 + "px"
-            imgbig.style.display = "none";
-            imgzoom.style.display = "block";
-            viecads.style.opacity = 1
-            butonsvlyu.style.opacity = 1
+        prodtbox.forEach((e) => {
+            e.addEventListener("mousemove", () => {
+                let viecads = e.children[0].children[2];
+                let imgbig = e.children[0].children[0];
+                let imgzoom = e.children[0].children[1]
+                let butonsvlyu = e.children[1].children[2]
+                viecads.style.bottom = 0 + "px"
+                butonsvlyu.style.bottom = 0 + "px"
+                imgbig.style.display = "none";
+                imgzoom.style.display = "block";
+                viecads.style.opacity = 1
+                butonsvlyu.style.opacity = 1
+
+            })
+            e.addEventListener("mouseleave", () => {
+                let viecads = e.children[0].children[2];
+                let butonsvlyu = e.children[1].children[2]
+                let imgzoom = e.children[0].children[1]
+                let imgbig = e.children[0].children[0];
+                viecads.style.bottom = -60 + "px"
+                butonsvlyu.style.bottom = -65 + "px"
+                imgbig.style.display = "block";
+                imgzoom.style.display = "none";
+                viecads.style.opacity = 0
+                butonsvlyu.style.opacity = 0
+
+            })
 
         })
-        e.addEventListener("mouseleave", () => {
-            let viecads = e.children[0].children[2];
-            let butonsvlyu = e.children[1].children[2]
-            let imgzoom = e.children[0].children[1]
-            let imgbig = e.children[0].children[0];
-            viecads.style.bottom = -60 + "px"
-            butonsvlyu.style.bottom = -65 + "px"
-            imgbig.style.display = "block";
-            imgzoom.style.display = "none";
-            viecads.style.opacity = 0
-            butonsvlyu.style.opacity = 0
-
-        })
-
-    })
 
 
-}
+    }
+    prodctscadmuv()
+})
 function rightleftbutons() {
     let leftbtn = document.querySelector(".leftsaero")
     let rightbtn = document.querySelector(".rightaero")
@@ -136,7 +139,6 @@ function bgcolors() {
 
 rightleftbutons()
 bgcolors()
-prodctscadmuv()
 
 
 
